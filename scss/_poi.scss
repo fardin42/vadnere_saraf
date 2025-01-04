@@ -1,0 +1,82 @@
+.poi{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    inset: 0;
+    background-color: color('cream');
+    border-radius: 8px;
+    
+    &-item {
+        position: absolute;
+        background-color: color('cream');
+        border-radius: 50%;
+        
+        &--visited {
+            .poi__btn {
+                .icon {
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+    
+    
+}
+
+// Reset utility class
+.reset {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    cursor: pointer;
+    border-radius: 8px;
+    
+    &:focus {
+        outline: none;
+    }
+}
+.poi-btn {
+    background-color: color('cream');
+    border: 2px solid rgba(color('cream'), 0.15);
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 9999px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    &::before {
+        content: '';
+        position: absolute;
+        inset: -8px;
+        border: 2px solid rgba(color('cream'), 0.3);
+        border-radius: 50%;
+        transition: all 0.3s ease;
+    }
+    
+    .icon {
+        display: block;
+       
+        background: color('cream');
+        border-radius: 50%;
+        padding: 6px;
+        fill: color('brown');
+        transition: all 0.3s ease;
+    }
+    
+    &:hover {
+        &::before {
+            transform: scale(1.2);
+            opacity: 0;
+        }
+        
+        .icon {
+            background: color('sand');
+            fill: color('cream');
+            transform: rotate(45deg);
+        }
+    }
+}

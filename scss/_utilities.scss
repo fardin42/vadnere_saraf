@@ -1,0 +1,74 @@
+.btn {
+    &-accent {
+        background-color: color('sand');
+        border-color: color('sand');
+        color: color('cream');
+        transition: all 0.3s ease;
+        
+        &:hover {
+            background-color: color('brown');
+            border-color: color('brown');
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(color('dark'), 0.15);
+        }
+        
+        &:active {
+            transform: translateY(0);
+        }
+    }
+
+    &-outline-accent {
+        border: 2px solid color('sand');
+        color: color('sand');
+        
+  
+    }
+}
+
+// Card styles
+.card {
+    background-color: color('cream');
+    border: none;
+    box-shadow: 0 4px 12px rgba(color('dark'), 0.1);
+    
+    &-title {
+        color: color('brown');
+    }
+    
+    &-text {
+        color: color('dark');
+    }
+}
+
+// Section styles
+.section {
+    &-title {
+        color: color('brown');
+        position: relative;
+        display: inline-block;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: color('sand');
+        }
+    }
+}
+
+@media (min-width: $breakpoint-md) {
+    .md\:hidden {
+        display: none;
+    }
+    
+    .md\:flex {
+        display: flex;
+    }
+}
+
+.js-nav-menu {
+    transition: all 0.3s ease-in-out;
+} 

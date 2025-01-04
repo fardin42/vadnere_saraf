@@ -1,0 +1,142 @@
+.nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+}
+
+.navbar {
+    width: 100%;
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    
+    &.navbar-scrolled {
+        background-color: rgba($cream, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 10px rgba($brown, 0.1);
+        padding: 0.75rem 0;
+        
+        .navbar-brand {
+            color: $brown;
+        }
+        
+        .nav-link {
+            color: $brown;
+            
+            &:hover,
+            &.active {
+                color: $sand;
+            }
+        }
+    }
+    
+    .navbar-brand {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: $cream;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        
+        .brand-icon {
+            font-size: 1.4rem;
+            color: $accent;
+        }
+        
+        &:hover {
+            color: $sand;
+        }
+    }
+    
+    .navbar-toggler {
+        border: none;
+        padding: 0.5rem;
+        color: $cream;
+        
+        &:focus {
+            box-shadow: none;
+        }
+        
+        i {
+            font-size: 1.5rem;
+        }
+    }
+    
+    .navbar-nav {
+        gap: 1rem;
+        
+        .nav-link {
+            color: $cream;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 1rem;
+                right: 1rem;
+                height: 2px;
+                background-color: $accent;
+                transform: scaleX(0);
+                transition: transform 0.3s ease;
+            }
+            
+            &:hover,
+            &.active {
+                color: $accent;
+                
+                &::after {
+                    transform: scaleX(1);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar {
+        background-color: rgba($cream, 0.95);
+        backdrop-filter: blur(10px);
+        
+        .navbar-brand,
+        .nav-link {
+            color: $brown;
+        }
+        
+        .navbar-toggler {
+            color: $brown;
+        }
+        
+        .navbar-collapse {
+            background-color: $cream;
+            padding: 1rem;
+            border-radius: 12px;
+            margin-top: 1rem;
+            box-shadow: 0 4px 12px rgba($brown, 0.1);
+            
+            .navbar-nav {
+                gap: 0;
+                
+                .nav-link {
+                    padding: 0.75rem 1rem;
+                    border-radius: 8px;
+                    
+                    &:hover,
+                    &.active {
+                        background-color: rgba($sand, 0.1);
+                    }
+                    
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+} 

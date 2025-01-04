@@ -1,0 +1,42 @@
+// Color Palette
+$colors: (
+    'cream': #FFF,
+    'sand': #F0BB78,
+    'brown': #1E3B4B,
+    'dark': #131010
+);
+
+// Function to get color
+@function color($color-name) {
+    @return map-get($colors, $color-name);
+}
+
+// Color utility classes
+@each $name, $color in $colors {
+    .text-#{$name} {
+        color: $color;
+    }
+    
+    .bg-#{$name} {
+        background-color: $color;
+    }
+    
+    .border-#{$name} {
+        border-color: $color;
+    }
+
+    .hover-#{$name} {
+        &:hover {
+            color: $color !important;
+        }
+    }
+}
+
+// Custom gradients
+.bg-gradient-brown {
+    background: linear-gradient(to right, color('brown'), color('dark'));
+}
+
+.bg-gradient-sand {
+    background: linear-gradient(to right, color('sand'), color('brown'));
+}

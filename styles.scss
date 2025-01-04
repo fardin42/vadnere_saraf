@@ -1,0 +1,21 @@
+// Variables and configuration
+
+@import 'scss/variables';
+@import 'scss/utils/color';
+
+// Base styles
+@import 'scss/base';
+
+// Components
+@import 'scss/navigation';
+@import 'scss/poi';
+@import 'scss/modal';
+@import 'scss/category';
+@import 'scss/components/header';
+
+
+// Utilities
+@import 'scss/utilities';
+
+// Carousel
+@import 'scss/partials/carousel'; 

@@ -1,0 +1,128 @@
+/* Base styles */
+:root {
+    --bs-accent: #d87d4a;
+    --bs-accent-rgb: 216, 125, 74;
+    --brown-color: #8B4513;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* Utility classes */
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1280px;
+}
+
+/* Navigation styles */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: white;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Colors */
+.text-accent-terra {
+    color: var(--color-accent-terra);
+}
+
+.bg-accent-terra {
+    background-color: var(--color-accent-terra);
+}
+
+/* Responsive utilities */
+@media (min-width: 768px) {
+    .md\:hidden {
+        display: none;
+    }
+    
+    .md\:flex {
+        display: flex;
+    }
+}
+
+/* Animation */
+.js-nav-menu {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Custom utility classes */
+.btn-accent {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--bs-accent);
+    --bs-btn-border-color: var(--bs-accent);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #c26a3a;
+    --bs-btn-hover-border-color: #b66436;
+    --bs-btn-active-bg: #b66436;
+    --bs-btn-active-border-color: #aa5e33;
+}
+
+.hover-accent {
+    transition: color 0.2s ease-in-out;
+    
+    &:hover {
+        color: var(--bs-accent) !important;
+    }
+}
+
+/* POI Component Styles */
+.poi {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.poi__item {
+    position: absolute;
+    
+    &--visited .poi__btn {
+        background: var(--bs-accent);
+        color: white;
+    }
+}
+
+.poi__btn {
+    background: white;
+    border: 2px solid var(--bs-accent);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+    
+    &:hover {
+        background: var(--bs-accent);
+        color: white;
+        transform: scale(1.1);
+    }
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    
+    &.is-visible {
+        display: flex;
+    }
+}

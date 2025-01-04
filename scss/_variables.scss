@@ -1,0 +1,23 @@
+@import 'utils/color';
+
+// Primary Colors
+$accent-color: color('sand');
+$accent-color-dark: color('brown');
+$accent-color-darker: color('dark');
+$background-color: color('cream');
+
+// Breakpoints
+$breakpoint-md: 768px;
+
+// Other variables
+$navbar-height: 4rem;
+$container-max-width: 1280px;
+$modal-backdrop-color: rgba(color('dark'), 0.5);
+
+// Bootstrap variable overrides
+:root {
+    --bs-accent: #{$accent-color};
+    --bs-accent-rgb: #{red($accent-color)}, #{green($accent-color)}, #{blue($accent-color)};
+    --bs-body-bg: #{$background-color};
+    --bs-body-color: #{$accent-color-darker};
+} 

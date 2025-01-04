@@ -1,0 +1,72 @@
+.modal {
+    display: none;
+    
+    &.is-visible {
+        display: flex;
+    }
+    
+    &.fade {
+        .modal-dialog {
+            transform: scale(0.95);
+            transition: transform 0.3s ease-out;
+        }
+        
+        &.show .modal-dialog {
+            transform: scale(1);
+        }
+    }
+
+    &__content {
+        position: relative;
+        background: color('cream');
+        border-radius: 0.5rem;
+        box-shadow: 0 10px 25px rgba(color('dark'), 0.1);
+        max-width: 90%;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    &__close-btn {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: transparent;
+        border: none;
+        padding: 0.5rem;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+        color: color('brown');
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    &-content {
+        background-color: color('cream');
+        border: none;
+        box-shadow: 0 10px 25px rgba(color('dark'), 0.15);
+    }
+    
+    &-header {
+        border-bottom-color: color('sand');
+    }
+    
+    &-title {
+        color: color('brown');
+    }
+    
+    &-footer {
+        border-top-color: color('sand');
+    }
+    
+    .btn-close {
+        color: color('brown');
+        opacity: 0.75;
+        transition: opacity 0.2s ease;
+        
+        &:hover {
+            opacity: 1;
+        }
+    }
+} 

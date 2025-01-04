@@ -1,0 +1,238 @@
+@import '../utils/variables';
+@import '../utils/mixins';
+
+.poi-section {
+    background-color: $cream;
+    
+    .section-header {
+        h2 {
+            color: $brown;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            color: $sand;
+        }
+    }
+    
+    .poi-wrapper {
+        max-width: 800px;
+        margin: 0 auto;
+        
+        figure {
+            position: relative;
+            aspect-ratio: 3/4;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: $box-shadow-lg;
+            border: 2px solid rgba($brown, 0.1);
+            
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+}
+
+.poi-list {
+ 
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.poi-item {
+
+    pointer-events: auto;
+    
+    &.visited .poi-btn {
+        background-color: rgba($sand, 0.95);
+        backdrop-filter: blur(10px);
+        border-color: rgba($cream, 0.5);
+        
+        &::before {
+            background: radial-gradient(circle at 30% 30%, 
+                lighten($sand, 5%), 
+                darken($sand, 5%)
+            );
+        }
+        
+        &::after {
+            display: none;
+        }
+        
+        i {
+            color: $cream;
+            transform: rotate(45deg);
+        }
+    }
+}
+
+.poi-btn {
+    --size: 40px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    border: 2px solid $cream;
+    background-color: $brown;
+    color: $cream;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 4px 12px rgba($brown, 0.3),
+                inset 0 2px 4px rgba($cream, 0.2);
+    
+    i {
+        font-size: 14px;
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        color: $cream;
+        filter: drop-shadow(0 1px 2px rgba($brown, 0.3));
+    }
+    
+    &::before {
+        content: "";
+        position: absolute;
+        width: calc(100% - 8px);
+        height: calc(100% - 8px);
+        top: 4px;
+        left: 4px;
+        border-radius: inherit;
+        background: radial-gradient(circle at 30% 30%, 
+            lighten($brown, 10%), 
+            $brown
+        );
+    }
+    
+    &::after {
+        content: "";
+        position: absolute;
+        width: calc(100% + 8px);
+        height: calc(100% + 8px);
+        top: -4px;
+        left: -4px;
+        border-radius: inherit;
+        border: 2px solid rgba($cream, 0.6);
+        animation: poiPulse 2s infinite;
+    }
+    
+    &:hover {
+        transform: scale(1.1);
+        background-color: $sand;
+        border-color: $cream;
+        
+        &::before {
+            background: radial-gradient(circle at 30% 30%, 
+                lighten($sand, 10%), 
+                $sand
+            );
+        }
+        
+        i {
+            transform: rotate(45deg);
+            color: $cream;
+        }
+    }
+}
+
+// Modal styles
+.modal {
+    .modal-content {
+        border: none;
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: $cream;
+        box-shadow: 0 8px 32px rgba($brown, 0.15);
+    }
+    
+    .modal-body {
+        h3 {
+            color: $brown;
+            font-weight: 600;
+        }
+        
+        p {
+            color: $sand;
+        }
+        
+        .price {
+            color: $brown;
+            font-weight: 600;
+        }
+        
+        .btn-primary {
+            background-color: $brown;
+            border-color: $brown;
+            color: $cream;
+            padding: 0.5rem 1.5rem;
+            font-weight: 500;
+            
+            &:hover {
+                background-color: $sand;
+                border-color: $sand;
+            }
+        }
+    }
+    
+    .btn-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1;
+        color: $brown;
+        opacity: 0.7;
+        transition: opacity 0.3s ease;
+        
+        &:hover {
+            opacity: 1;
+        }
+    }
+    
+    figure {
+        aspect-ratio: 1;
+        margin: 0;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 2px solid rgba($brown, 0.1);
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+@keyframes poiPulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.4;
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .poi-section .poi-wrapper figure {
+        aspect-ratio: 2/3;
+    }
+    
+    .modal .modal-content {
+        margin: 1rem;
+    }
+} 

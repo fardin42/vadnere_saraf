@@ -1,0 +1,66 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    background-color: rgba(color('cream'), 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    
+    &-brand {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: color('brown');
+        
+        &:hover {
+            color: color('sand');
+        }
+    }
+    
+    &-nav {
+        .nav-item {
+            margin: 0 0.5rem;
+            
+            .nav-link {
+                color: color('brown');
+                font-weight: 500;
+                padding: 0.5rem 1rem;
+                transition: all 0.3s ease;
+                
+                &:hover,
+                &.active {
+                    color: color('sand');
+                }
+            }
+        }
+    }
+}
+
+// Mobile styles
+@media (max-width: ($breakpoint-md - 1)) {
+    .navbar {
+        &-collapse {
+            background-color: rgba(color('cream'), 0.98);
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(color('dark'), 0.1);
+            position: absolute;
+            top: 85px;
+            width: 90%;
+            margin: 0 auto;
+            left: 5%;
+            
+            .nav-item {
+                margin: 0.5rem 0;
+                
+                .nav-link {
+                    padding: 0.75rem 1rem;
+                    
+                    &:hover,
+                    &.active {
+                        transform: translateX(8px);
+                    }
+                }
+            }
+        }
+    }
+}

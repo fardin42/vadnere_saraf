@@ -1,0 +1,130 @@
+.category-section {
+    background: linear-gradient(to right, rgba(color('cream'), 0.8), rgba(color('sand'), 0.1));
+    overflow: hidden;
+
+    h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        position: relative;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: color('sand');
+        }
+    }
+}
+
+.category-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.category-wrapper {
+    overflow: hidden;
+    margin: 0 3rem;
+}
+
+.category-track {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.category-item {
+    flex: 0 0 250px;
+}
+
+.category-circle {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    
+    .category-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(color('brown'), 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: color('cream');
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    }
+    
+    &:hover {
+        transform: scale(1.05);
+        
+        img {
+            transform: scale(1.1);
+        }
+        
+        .category-overlay {
+            opacity: 1;
+        }
+    }
+}
+
+.carousel-control {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: color('cream');
+    border: 2px solid color('sand');
+    color: color('brown');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background: color('sand');
+        color: color('cream');
+        transform: scale(1.1);
+    }
+    
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        
+        &:hover {
+            background: color('cream');
+            color: color('brown');
+            transform: none;
+        }
+    }
+    
+    i {
+        font-size: 1rem;
+    }
+} 
+.swiper-wrapper{
+    padding: 1rem 0;
+}

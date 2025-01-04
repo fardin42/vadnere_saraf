@@ -11,7 +11,7 @@ export class HeaderCarousel {
 
         const carouselHTML = `
             <div class="row align-items-center h-100">
-                <div class="col-lg-6">
+                <div class="col-lg-6 text-center text-lg-start">
                     <h1 class="display-4 fw-bold mb-4">
                         Vadnere Saraf
                         <span class="d-block text-sand mt-2" style="font-size: clamp(0.4em, 3vw, 0.6em);">Since 1947</span>

@@ -4,7 +4,7 @@
     z-index: 1030;
     background-color: rgba(color('cream'), 0.95);
     backdrop-filter: blur(10px);
-    padding: 1rem 0;
+    // padding: 1rem 0;
     
     &-brand {
         font-size: 1.8rem;
@@ -63,4 +63,10 @@
             }
         }
     }
+}
+.img-fit{
+    border-radius: 50%;
+    overflow: hidden;
+    width: 80px;
+    height: 80px;
 }
